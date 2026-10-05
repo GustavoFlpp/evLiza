@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     'Seu primeiro elétrico começa pela experiência. Locação paga antes da decisão de assinatura. Protótipo conceitual independente.',
   robots: { index: false, follow: false },
+  icons: {
+    icon: { url: '/favicon.svg', type: 'image/svg+xml', sizes: 'any' },
+  },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
