@@ -1,0 +1,43 @@
+{
+  "name": "evliza",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint . --max-warnings=0 && npm run lint:context",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prebuild": "node scripts/prepare-output.mjs .next",
+    "test:e2e": "playwright test",
+    "format": "prettier --write src tests scripts *.ts *.mts *.mjs *.json docs README.md",
+    "pretest:e2e": "node scripts/prepare-output.mjs artifacts/browser-results",
+    "lint:context": "node scripts/verify-context-budget.mjs",
+    "test:e2e:dev": "playwright test --config playwright.dev.config.ts",
+    "predev": "node scripts/prepare-output.mjs .next-dev",
+    "pretest:e2e:dev": "node scripts/prepare-output.mjs artifacts/dev-browser-results"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "lucide-react": "^0.577.0",
+    "next": "^16.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.19.15",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.1",
+    "prettier": "^3.9.9",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

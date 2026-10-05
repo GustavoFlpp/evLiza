@@ -1,0 +1,756 @@
+/* Editorial rhythm, using the existing 8px spacing scale and Localiza palette. */
+:root {
+  --space-12: 96px;
+  --surface-green: #eef6e9;
+}
+.page {
+  padding-block: var(--space-8) var(--space-12);
+}
+.page-intro {
+  max-width: 800px;
+  margin-bottom: var(--space-6);
+}
+.page-intro h1 {
+  font-size: clamp(32px, 3.5vw, 48px);
+  text-wrap: balance;
+  margin-bottom: var(--space-3);
+}
+.page-intro p {
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+.page > .badge + .page-intro {
+  margin-top: var(--space-3);
+}
+.page > .actions:last-of-type {
+  margin-top: var(--space-5);
+}
+.page > .pilot-note,
+.section > .pilot-note {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+}
+.pilot-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 10px;
+}
+.pilot-note .badge {
+  flex-shrink: 0;
+}
+.home-hero {
+  background: #fff;
+}
+.hero-grid {
+  gap: var(--space-5);
+  min-height: 640px;
+}
+.hero-copy {
+  padding-block: var(--space-10);
+}
+.hero-copy h1 {
+  max-width: 560px;
+  font-size: clamp(36px, 4vw, 56px);
+  text-wrap: balance;
+}
+.hero-copy > p {
+  margin-block: var(--space-3) var(--space-5);
+  font-size: 16px;
+}
+.hero-copy .microcopy {
+  font-size: 10px;
+  margin-top: var(--space-4);
+}
+.section {
+  padding-block: var(--space-10);
+}
+.section-heading {
+  margin-bottom: var(--space-6);
+}
+.step-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 272px;
+  padding: var(--space-4);
+  background: #f7f9f5;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.step-card:hover {
+  border-color: #acc5a3;
+  transform: translateY(-3px);
+}
+.step-top {
+  margin-bottom: var(--space-4);
+}
+.step-number {
+  font-size: 14px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 50%;
+}
+.step-card p {
+  line-height: 1.7;
+  font-size: 13px;
+}
+.section-bottom {
+  padding-top: var(--space-4);
+}
+.catalog-preview {
+  background: var(--background);
+}
+.catalog-preview h2 {
+  max-width: 700px;
+  margin-block: var(--space-3) var(--space-6);
+}
+.catalog-preview .card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  min-height: 280px;
+}
+.catalog-preview .card p {
+  max-width: 430px;
+}
+.catalog-preview .card .button,
+.catalog-preview .card .text-link {
+  margin-top: auto;
+}
+.promise-panel h3 {
+  color: #fff;
+}
+.tips-grid {
+  margin-top: var(--space-6);
+}
+.booking-fields {
+  background: #f7f9f5;
+}
+.inventory-card {
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.inventory-card:hover {
+  transform: translateY(-2px);
+}
+.journey-progress {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0 0 var(--space-6);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.journey-progress li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.journey-progress li > span:first-child {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 11px;
+}
+.journey-progress .done {
+  color: var(--tertiary);
+}
+.journey-progress .done > span:first-child {
+  background: #e1efdb;
+  border-color: #b5cbaa;
+}
+.journey-progress .current {
+  color: var(--dark);
+  font-weight: 700;
+}
+.journey-progress .current > span:first-child {
+  background: var(--dark);
+  color: white;
+  border-color: var(--dark);
+}
+.post-experience {
+  background: #f5f7f3;
+}
+.post-container {
+  max-width: 1120px;
+}
+.journey-panel {
+  animation: journey-enter 0.3s ease-out;
+}
+.journey-panel:focus {
+  outline: none;
+}
+.experience-recap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid #dae4d6;
+  border-radius: 16px;
+  background: #fff;
+}
+.recap-art {
+  background: var(--surface-green);
+  border-radius: 12px;
+  padding: var(--space-3);
+  text-align: center;
+}
+.recap-art .car-illustration {
+  max-width: 400px;
+  margin: auto;
+}
+.recap-facts {
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+.recap-facts dt {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.recap-facts dd {
+  margin: 0;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 17px;
+}
+.journey-action {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid #dce5d7;
+}
+.journey-action p {
+  margin: 0;
+  flex: 1;
+}
+.journey-action h2 {
+  flex-basis: 100%;
+  font-size: 24px;
+  margin: 0;
+}
+.feeling-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+.feeling-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  gap: var(--space-3);
+  background: white;
+  border: 1px solid #dce5d7;
+  border-radius: 16px;
+  padding: var(--space-4);
+  min-height: 312px;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    transform 0.2s;
+}
+.feeling-card strong {
+  color: var(--dark);
+  font-size: 23px;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+.feeling-card > span:not(.step-icon) {
+  color: var(--muted);
+  font-size: 14px;
+}
+.feeling-card > svg {
+  margin-top: auto;
+  color: var(--secondary);
+}
+.feeling-card:hover {
+  background: #f1f8ed;
+  border-color: var(--secondary);
+  transform: translateY(-4px);
+}
+.reason-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+.reason-chip {
+  background: white;
+  border: 1px solid #b9c9b3;
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 56px;
+}
+.reason-chip:hover,
+.reason-chip.is-selected {
+  background: #e4f4d9;
+  border-color: var(--secondary);
+  color: var(--dark);
+}
+.optional-comment {
+  display: block;
+  max-width: 640px;
+  font-weight: 600;
+}
+.optional-comment small {
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 8px;
+}
+.optional-comment textarea {
+  display: block;
+  margin-top: 16px;
+  min-height: 80px;
+}
+.recap-message {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #e8f2e2;
+  border-radius: 12px;
+  padding: var(--space-3);
+  margin-top: var(--space-3);
+  color: var(--dark);
+}
+.recap-message p {
+  margin: 0;
+  color: var(--dark);
+}
+.doubt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+.doubt-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--space-3);
+}
+.doubt-card summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--dark);
+}
+.doubt-card summary span {
+  font-size: 18px;
+  font-weight: 600;
+}
+.doubt-card summary small {
+  color: var(--tertiary);
+  font-size: 12px;
+}
+.doubt-card p {
+  margin: 24px 0 0;
+}
+.conversion-background {
+  background: #f7f9f5;
+}
+.benefit-moment {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--dark);
+}
+.benefit-story {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.benefit-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid #79a68b;
+  border-radius: 16px;
+  color: var(--primary);
+  margin-bottom: 32px;
+}
+.benefit-story .eyebrow {
+  color: #b8e798;
+}
+.benefit-story h2 {
+  color: white;
+  font-size: clamp(28px, 3vw, 38px);
+  max-width: 470px;
+}
+.benefit-story p {
+  color: #d9e9d4;
+  max-width: 410px;
+}
+.benefit-path {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #c9e5bd;
+  font-size: 11px;
+  margin-top: auto;
+  padding-top: 32px;
+}
+.benefit-path span {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.benefit-reward {
+  margin: 16px;
+  background: #f3f9ef;
+  padding: var(--space-4);
+  border-radius: 12px;
+}
+.benefit-reward > p {
+  margin: 24px 0 8px;
+  color: var(--dark);
+}
+.reward-value {
+  display: block;
+  font-size: clamp(40px, 4vw, 56px);
+  letter-spacing: -0.05em;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.benefit-reward small {
+  display: block;
+  margin-top: 24px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.benefit-reward .summary-list {
+  font-size: 12px;
+  gap: 16px 24px;
+}
+.benefit-calculation {
+  margin-top: 24px;
+}
+.benefit-calculation summary {
+  color: var(--tertiary);
+  font-size: 13px;
+}
+.benefit-calculation p {
+  font-size: 12px;
+  margin-block: 16px 0;
+}
+.subscription-collection {
+  display: grid;
+  gap: 32px;
+}
+.subscription-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+  border: 1px solid #dce5d7;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.subscription-art {
+  padding: var(--space-4);
+  background: #eef3e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.subscription-art .car-illustration {
+  max-width: 480px;
+  margin-inline: auto;
+}
+.subscription-art small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.subscription-body {
+  padding: var(--space-5);
+}
+.subscription-body h2 {
+  font-size: 32px;
+}
+.subscription-specs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.subscription-specs span {
+  background: #f4f6f1;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+.subscription-price {
+  padding-block: 24px 16px;
+}
+.subscription-price > small {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.applied-benefit {
+  color: var(--tertiary);
+  font-size: 13px;
+  background: #eef6e9;
+  border-radius: 8px;
+  padding: 16px;
+}
+.proposal-moment {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+.executive-dashboard > .actions {
+  margin-bottom: 32px;
+}
+.executive-dashboard {
+  background: #f8f9f7;
+  border-radius: 16px;
+  padding-inline: 32px;
+  margin-block: 32px;
+}
+.metrics-section {
+  padding-top: 32px;
+}
+.metric-grid {
+  gap: 24px;
+  margin-block: 32px 48px;
+}
+.metric-grid .card {
+  min-height: 176px;
+  padding: 24px;
+  border-top: 3px solid #d7e9cb;
+}
+.metrics-section + .metrics-section {
+  border-top: 1px solid var(--border);
+}
+.economics-section {
+  background: #edf2e9;
+  border-radius: 16px;
+  padding: 32px;
+  margin-block: 48px;
+}
+.economics-section > .card {
+  margin: 0;
+}
+.linkedin-demo .page {
+  padding-block: 48px 64px;
+}
+.linkedin-demo .page-intro {
+  margin-bottom: 40px;
+}
+.linkedin-demo .page-intro h1 {
+  font-size: clamp(30px, 3vw, 42px);
+}
+.demo-director {
+  position: relative;
+  top: auto;
+}
+.demo-scene {
+  animation: journey-enter 0.3s ease-out;
+}
+@keyframes journey-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 960px) {
+  .hero-grid {
+    gap: 24px;
+  }
+  .feeling-grid {
+    gap: 16px;
+  }
+  .feeling-card {
+    padding: 24px;
+  }
+  .feeling-card strong {
+    font-size: 20px;
+  }
+  .benefit-story {
+    padding: 32px;
+  }
+  .benefit-moment {
+    grid-template-columns: 1fr 1fr;
+  }
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .page,
+  .linkedin-demo .page {
+    padding-block: 40px 64px;
+  }
+  .hero-grid {
+    min-height: auto;
+  }
+  .hero-copy {
+    padding-block: 48px 24px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(34px, 8vw, 44px);
+  }
+  .section {
+    padding-block: 56px;
+  }
+  .page-intro,
+  .linkedin-demo .page-intro {
+    margin-bottom: 32px;
+  }
+  .page-intro p {
+    font-size: 14px;
+  }
+  .step-card {
+    min-height: 240px;
+    padding: 24px;
+  }
+  .experience-recap,
+  .subscription-card,
+  .proposal-moment,
+  .benefit-moment {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .experience-recap {
+    padding: 24px;
+  }
+  .recap-art .car-illustration {
+    max-width: 320px;
+  }
+  .feeling-grid,
+  .doubt-grid {
+    grid-template-columns: 1fr;
+  }
+  .feeling-card {
+    min-height: 216px;
+    gap: 16px;
+  }
+  .journey-progress {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .journey-progress li {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .journey-progress li > span:first-child {
+    width: 24px;
+    height: 24px;
+  }
+  .journey-action {
+    margin-top: 32px;
+  }
+  .journey-action > .button {
+    width: 100%;
+  }
+  .journey-action > p {
+    flex-basis: 100%;
+  }
+  .benefit-moment {
+    gap: 0;
+  }
+  .benefit-story {
+    padding: 32px 24px;
+  }
+  .benefit-reward {
+    padding: 24px;
+  }
+  .subscription-body {
+    padding: 24px;
+  }
+  .pilot-note {
+    display: block;
+  }
+  .pilot-note .badge {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  .executive-dashboard {
+    padding-inline: 16px;
+  }
+  .metric-grid {
+    gap: 16px;
+  }
+  .metric-grid .card {
+    padding: 16px;
+  }
+  .economics-section {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-panel,
+  .demo-scene {
+    animation: none;
+  }
+  .feeling-card:hover,
+  .step-card:hover,
+  .inventory-card:hover {
+    transform: none;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.feeling-card strong {
+  min-height: 2.5em;
+}
+.linkedin-demo .journey-panel {
+  animation: none;
+}
+
+/* Keep the recap action in the recording viewport without compressing the customer flow. */
+@media (min-width: 961px) {
+  .linkedin-demo .experience-recap {
+    padding: 32px;
+    gap: 32px;
+  }
+  .linkedin-demo .recap-facts {
+    gap: 16px;
+  }
+  .linkedin-demo .recap-message {
+    padding: 16px 24px;
+  }
+  .linkedin-demo .post-experience .journey-action {
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+}

@@ -1,0 +1,433 @@
+/* Current rental-before-subscription flow. Localiza reference tokens are retained. */
+.split-grid,
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+}
+.booking-layout {
+  grid-template-columns: minmax(0, 1.65fr) minmax(320px, 1fr);
+  align-items: start;
+}
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+.card h2,
+.card h3 {
+  margin-bottom: 16px;
+}
+.card p {
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.card + .card,
+.page > section,
+.page > .split-grid {
+  margin-top: 24px;
+}
+.page.narrow {
+  max-width: 880px;
+}
+.booking-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.booking-fields label,
+form.card > label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+select,
+input[type='date'],
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--text);
+}
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+form.card {
+  display: grid;
+  gap: 24px;
+}
+fieldset {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+legend {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.choice {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  background: var(--background);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.choice input {
+  margin-top: 4px;
+  accent-color: var(--secondary);
+}
+.section-title {
+  margin: 32px 0 24px;
+}
+.selected {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+.full {
+  width: 100%;
+  justify-content: center;
+}
+.booking-summary {
+  position: sticky;
+  top: 112px;
+}
+.summary-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+  font-size: 14px;
+}
+.summary-list dt {
+  color: var(--muted);
+}
+.summary-list dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.summary-row {
+  display: contents;
+}
+.summary-list > .summary-row {
+  display: contents;
+  border: 0;
+  padding: 0;
+}
+.split-grid > .card {
+  margin-top: 0;
+}
+.simulation-banner {
+  background: #edf5ea;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+}
+.simulation-banner p:last-child {
+  margin-bottom: 0;
+}
+.summary-list .price {
+  font-size: 26px;
+  color: var(--dark);
+}
+.eligibility {
+  display: block;
+  font-size: 9px;
+  margin-top: 4px;
+  font-weight: 700;
+}
+.eligibility.yes {
+  color: var(--tertiary);
+}
+.subtle-box {
+  background: #edf5ea;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 16px 0;
+  line-height: 1.65;
+}
+.subtle-box p:last-child {
+  margin-bottom: 0;
+}
+.steps-grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.metric-label {
+  font-size: 13px;
+  color: var(--muted);
+  min-height: 36px;
+}
+.metric-value {
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 750;
+  color: var(--dark);
+  margin: 16px 0 8px;
+  overflow-wrap: anywhere;
+}
+.metric-grid .card {
+  padding: 24px;
+  margin: 0;
+}
+.chart-row {
+  display: block;
+  margin: 24px 0;
+}
+.chart-row > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.bar-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 8px;
+  background: var(--background);
+  overflow: hidden;
+}
+.bar-track > div {
+  height: 100%;
+  background: var(--secondary);
+  border-radius: 8px;
+}
+.slider-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.slider-grid label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+.slider-grid strong {
+  color: var(--dark);
+  font-size: 18px;
+}
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--secondary);
+  cursor: pointer;
+}
+.economic-result {
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--background);
+}
+.economic-result .price {
+  font-size: 42px;
+  color: var(--dark);
+}
+.asset-cycle {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.asset-cycle > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.asset-cycle span {
+  padding: 16px;
+  background: var(--background);
+  border-radius: 8px;
+  font-size: 13px;
+}
+.asset-cycle b {
+  transform: rotate(-90deg);
+}
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.tips-grid .card {
+  margin: 0;
+  padding: 24px;
+}
+.tips-grid summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.tips-grid p {
+  margin-top: 16px;
+}
+.terms-list {
+  padding-left: 24px;
+}
+.terms-list li {
+  padding: 8px;
+  line-height: 1.6;
+}
+.demo-director {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--dark);
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.demo-director > div:first-child {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.demo-director .button-secondary {
+  color: white;
+  border-color: #ffffff60;
+  background: transparent;
+}
+.demo-director .actions {
+  flex-wrap: nowrap;
+}
+.demo-director span:not(.badge) {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.demo-progress {
+  height: 4px;
+  background: var(--border);
+}
+.demo-progress > div {
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.2s;
+}
+.linkedin-demo .page {
+  padding-top: 40px;
+}
+.linkedin-demo .page-intro {
+  margin-bottom: 24px;
+}
+.linkedin-demo .page-intro h1 {
+  font-size: 38px;
+}
+.linkedin-demo .booking-summary {
+  position: static;
+}
+.demo-stage-2 .booking-summary {
+  opacity: 0.45;
+}
+.demo-stage-3 .inventory-card {
+  box-shadow: var(--shadow);
+}
+.demo-stage-4 .booking-summary {
+  outline: 2px solid var(--secondary);
+}
+.section-lead {
+  margin: 24px 0 48px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 4px;
+}
+@media (max-width: 960px) {
+  .booking-layout,
+  .split-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-summary {
+    position: static;
+  }
+  .metric-grid,
+  .steps-grid.four,
+  .tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .demo-director {
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+  .demo-director > div:first-child {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .demo-director span:not(.badge) {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .inventory-grid,
+  .booking-fields,
+  .slider-grid,
+  .steps-grid.four,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 24px;
+  }
+  .metric-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .metric-grid .card {
+    padding: 16px;
+  }
+  .economic-result {
+    padding: 24px;
+  }
+  .economic-result .price {
+    font-size: 30px;
+  }
+  .linkedin-demo .page-intro h1 {
+    font-size: 28px;
+  }
+  .demo-director strong {
+    font-size: 13px;
+  }
+  .demo-director .actions {
+    width: 100%;
+  }
+  .demo-director .button {
+    flex: 1;
+    font-size: 12px;
+    padding: 12px;
+  }
+  .asset-cycle {
+    flex-direction: column;
+  }
+  .asset-cycle > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .asset-cycle b {
+    transform: none;
+    text-align: center;
+  }
+}
